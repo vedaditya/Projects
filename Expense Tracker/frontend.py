@@ -294,6 +294,10 @@ class mainGUI(Users):                                   #GUI to record/show tran
         logout=Button(self.GUI, text='Logout',command=self.logout ,width=15)            #logout Button
         logout.grid(row=7,column=1,padx=5,pady=5,sticky='w',ipadx=10,ipady=10,columnspan=2)
         
+        
+        chnage=Button(self.GUI, text='Change Your Password',command=chpass ,width=15)            #Change password Button
+        chnage.grid(row=7,column=2,padx=5,pady=5,sticky='w',ipadx=10,ipady=10,columnspan=2)
+        
         self.totalbal=Label(self.GUI,bg='#166353',fg='#ffffff')                     #total Balance
         self.totalbal.configure(font=("Constantia",20,'bold'))
         self.totalbal.grid(row=8,column=0,padx=100,pady=5,columnspan=3)
@@ -322,7 +326,48 @@ class mainGUI(Users):                                   #GUI to record/show tran
     def change_Type(self,*args):                        #Getting the changed value of drop down button Type
         self.TYPE=self.Dtype.get()
 
-
+class chpass(Users):
+    
+    def __init__(self):
+        self.root=Tk()
+        self.root.title("Change Pssword")
+        self.root.minsize(400,300)
+        self.root.configure(background="#166353")
+        
+        
+        label1=Label(self.root,text="Reset your password",bg='#166353',fg='#ffffff')            #First Label
+        label1.configure(font=("Constantia",20,'bold'))
+        label1.pack(pady=(40,20))
+        
+        self.Npasswd=Entry(self.root,borderwidth=3)                          #Text Box for Password 
+        self.Npasswd.configure(font=(0))
+        self.Npasswd.pack(pady=(10,10))
+        self.Npasswd.insert(0,"Password")
+        self.Npasswd.bind("<FocusIn>",partial(self.default,self.Npasswd,"Password"))
+        self.Npasswd.bind("<FocusOut>",partial(self.default,self.Npasswd,"Password"))
+        
+        
+        reg=Button(self.root,text="Confirm!!",width=28,height=1,command=self.changePass)    #Confirm Button
+        reg.pack(pady=(10,10))
+        
+        close=Button(self.root,text="Close",width=28,height=1,command=self.closing) 
+        close.pack(pady=(10,10))
+        
+        self.status=Label(self.root,bg='#166353',fg='#ffffff')
+        self.status.configure(font=("Constantia",10,'bold'))
+        self.status.pack(pady=(20,8))
+        
+        
+        self.root.mainloop()
+        
+    def changePass(self):
+        passwd=self.Npasswd.get()
+        status=b.changePass(passwd)
+        if status==1:
+            self.status.configure(text="Password changed successfully")
+            self.root.after(1000,self.closing)
+        else:
+            self.status.configure(text=status)
        
 def execute():
     global flag

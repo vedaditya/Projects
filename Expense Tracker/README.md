@@ -16,7 +16,7 @@ Requirements:-
 	d. **tkcalender 
 	e. functools
 3. **Make sure you have installed the sql server and created the database with name the name "expense" and set the password of databse to '1234'.
-**4. first time for creating the tables inside the database expense run the createTable() function inside the Backend class in backend.py or execute the following commands on your python terminal.
+4. **first time for creating the tables inside the database expense run the createTable() function inside the Backend class in backend.py or execute the following commands on your python terminal.
 		a. from backend import Backend
 		b. b=Backend
 		c. c.createTable()

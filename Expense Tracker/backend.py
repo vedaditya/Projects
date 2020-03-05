@@ -152,7 +152,22 @@ class Backend:
                 self.mydb.close()
         else:   
             return connStatus 
-    
+        
+        
+    def changePass(self,Npasswd):                           #changing the password of user
+        connStatus=self.__connect()
+        if connStatus==1:    
+            try:
+                self.cursor.execute("UPDATE users SET `Password` = '{}' WHERE (User_id = {})".format(Npasswd,self.__UID))
+                self.mydb.commit()
+                return 1
+            except:
+                return "Some Error Occured!!"
+                
+            finally:
+                self.mydb.close()
+        else:   
+            return connStatus 
     
     def createTable(self):                                  #function for craeting the Table inside 
         self.__connect()
