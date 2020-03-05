@@ -12,9 +12,15 @@ Requirements:-
 2. Make sure the below given modules are installed in your python environment:
 	a. tkinter 
 	b. requests
-	c. mysql (Mysql Python connector)
-	d. tkcalender 
+	c. **mysql (Mysql Python connector)
+	d. **tkcalender 
 	e. functools
+**3. Make sure you have installed the sql server and created the database with name the name "expense" and set the password of databse to '1234'.
+**4. first time for creating the tables inside the database expense run the createTable() function inside the Backend class in backend.py or execute the following commands on your python terminal.
+		a. from backend import Backend
+		b. b=Backend
+		c. c.createTable()
+	
 
   Some of them are by default comes with python but you will need to install some of these by using pip installer (If you don't have pip in you PC, Install it. For more information/help reffer to he links).
 
