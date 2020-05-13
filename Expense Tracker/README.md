@@ -19,7 +19,7 @@ Requirements:-
 4. **first time for creating the tables inside the database expense run the createTable() function inside the Backend class in backend.py or execute the following commands on your python terminal.
 		a. from backend import Backend
 		b. b=Backend
-		c. c.createTable()
+		c. b.createTable()
 	
 
   Some of them are by default comes with python but you will need to install some of these by using pip installer (If you don't have pip in you PC, Install it. For more information/help reffer to he links).
