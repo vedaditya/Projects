@@ -7,7 +7,6 @@ Created on Thu Feb 27 15:27:00 2020
 
 from tkinter import *
 from backend import Backend
-import requests
 from tkinter import ttk
 from functools import partial
 from tkcalendar import DateEntry
