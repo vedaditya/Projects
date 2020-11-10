@@ -1,6 +1,7 @@
 
 #INSTRUCTIONS 
 
+
 Read these instructions before before executing these python script.
 
 This project is developed to block certain websites for a given time. In which you can restrict the
